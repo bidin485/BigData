@@ -40,6 +40,22 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+        'driver' => 'token',
+        'provider' => 'users',
+    ],
+    'admin' => [
+        'driver' => 'session',
+        'provider' => 'admins', // Make sure this matches your provider name
+    ],
+    'patron' => [
+        'driver' => 'session',
+        'provider' => 'patrons', // Make sure this matches your provider name
+    ],
+    'researcher' => [
+        'driver' => 'session',
+        'provider' => 'researchers', // Make sure this matches your provider name
+    ],
     ],
 
     /*
@@ -64,6 +80,19 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'admins' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Admin::class, // Replace with your Admin model
+    ],
+    'patrons' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Patron::class, // Replace with your Patron model
+    ],
+    'researchers' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Researcher::class, // Replace with your Researcher model
+    ],
 
         // 'users' => [
         //     'driver' => 'database',

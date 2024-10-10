@@ -1,55 +1,253 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-use Illuminate\Contracts\Http\Kernel;
-use Illuminate\Http\Request;
+  <head>
 
-define('LARAVEL_START', microtime(true));
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-/*
-|--------------------------------------------------------------------------
-| Check If The Application Is Under Maintenance
-|--------------------------------------------------------------------------
-|
-| If the application is in maintenance / demo mode via the "down" command
-| we will load this file so that any pre-rendered content can be shown
-| instead of starting the framework, which could cause an exception.
-|
-*/
+    <title>Mexant - Financial HTML5 Template</title>
 
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-    require $maintenance;
-}
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader for
-| this application. We just need to utilize it! We'll simply require it
-| into the script here so we don't need to manually load our classes.
-|
-*/
 
-require __DIR__.'/../vendor/autoload.php';
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-574-mexant.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+<!--
 
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request using
-| the application's HTTP kernel. Then, we will send the response back
-| to this client's browser, allowing them to enjoy our application.
-|
-*/
+TemplateMo 574 Mexant
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+https://templatemo.com/tm-574-mexant
 
-$kernel = $app->make(Kernel::class);
+-->
+  </head>
 
-$response = $kernel->handle(
-    $request = Request::capture()
-)->send();
+<body>
 
-$kernel->terminate($request, $response);
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          <img src="assets/images/logo.png" alt="">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                          <li class="scroll-to-section"><a href="#services">Services</a></li>
+                          <li class="scroll-to-section"><a href="#about">About</a></li>
+                          <li class="has-sub">
+                              <a href="javascript:void(0)">Pages</a>
+                              <ul class="sub-menu">
+                                  <li><a href="about-us.html">About Us</a></li>
+                                  <li><a href="our-services.html">Our Services</a></li>
+                                  <li><a href="contact-us.html">Contact Us</a></li>
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="#testimonials">Testimonials</a></li>
+                          <li><a href="contact-us.html">Contact Support</a></li> 
+
+                          <!-- Login and Register Links -->
+                        <li><a href="{{ route('login') }}" class="btn-login">Log in</a></li>
+                        
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <div class="swiper-container" id="top">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="slide-inner" style="background-image:url(assets/images/slide-01.jpg)">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="header-text">
+                  <h2>Get <em>ready</em> for your business<br>&amp; upgrade <em>all aspects</em></h2>
+                  <div class="div-dec"></div>
+                  <p>Mexant HTML5 Template is provided for free of charge. This layout is based on Boostrap 5 CSS framework. Anyone can download and edit for any professional website. Thank you for visiting TemplateMo website.</p>
+                  <div class="buttons">
+                    <div class="green-button">
+                      <a href="#">Discover More</a>
+                    </div>
+                    <div class="orange-button">
+                      <a href="#">Contact Us</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-inner" style="background-image:url(assets/images/slide-02.jpg)">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="header-text">
+                  <h2><em>Digital</em> Currency for you <br>&amp; Best <em>Crypto</em> Tips</h2>
+                  <div class="div-dec"></div>
+                  <p>You will see a bunch of free CSS templates when you search on Google. TemplateMo website is probably the best one because it is 100% free. It does not ask you anything in return. You have a total freedom to use any template for any purpose.</p>
+                  <div class="buttons">
+                    <div class="green-button">
+                      <a href="#">Discover More</a>
+                    </div>
+                    <div class="orange-button">
+                      <a href="#">Contact Us</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-inner" style="background-image:url(assets/images/slide-03.jpg)">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="header-text">
+                  <h2>Best One in Town<br>&amp; Crypto <em>Services</em></h2>
+                  <div class="div-dec"></div>
+                  <p>When you browse through different tags on TemplateMo website, you can see a variety of CSS templates which are responsive website designs for different individual needs. Please tell your friends about our website. Thank you.</p>
+                  <div class="buttons">
+                    <div class="green-button">
+                      <a href="#">Discover More</a>
+                    </div>
+                    <div class="orange-button">
+                      <a href="#">Contact Us</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+
+  <!-- ***** Main Banner Area End ***** -->
+
+  @include('frontend.services')
+
+  <section class="simple-cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <h4>Business <em>Solutions</em> and <strong>Crypto</strong> Investments</h4>
+        </div>
+        <div class="col-lg-7">
+          <div class="buttons">
+            <div class="green-button">
+              <a href="#">Discover More</a>
+            </div>
+            <div class="orange-button">
+              <a href="#">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+  @include('frontend.about')
+
+  @include('frontend.testmonial')
+
+  @include('frontend.partners')
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2022 Mexant Co., Ltd. All Rights Reserved. 
+          
+          <br>Designed by <a title="CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        var interleaveOffset = 0.5;
+
+      var swiperOptions = {
+        loop: true,
+        speed: 1000,
+        grabCursor: true,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        keyboardControl: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        on: {
+          progress: function() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              var slideProgress = swiper.slides[i].progress;
+              var innerOffset = swiper.width * interleaveOffset;
+              var innerTranslate = slideProgress * innerOffset;
+              swiper.slides[i].querySelector(".slide-inner").style.transform =
+                "translate3d(" + innerTranslate + "px, 0, 0)";
+            }      
+          },
+          touchStart: function() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              swiper.slides[i].style.transition = "";
+            }
+          },
+          setTransition: function(speed) {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              swiper.slides[i].style.transition = speed + "ms";
+              swiper.slides[i].querySelector(".slide-inner").style.transition =
+                speed + "ms";
+            }
+          }
+        }
+      };
+
+      var swiper = new Swiper(".swiper-container", swiperOptions);
+    </script>
+  </body>
+</html>
