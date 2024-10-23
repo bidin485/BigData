@@ -29,7 +29,7 @@ php artisan key:generate
 
 Step 5: Set Up the Database
 Create a new database matching the name specified in your .env file, and run migrations to create the necessary tables:
-php artisan migrate
+php artisan migrate and as well run php artisan db:seed so  as to fill the tables with data.
 
 Step 6: Build Frontend Assets
 Vite is used for compiling and bundling frontend assets (CSS, JS). You need to build the assets before running the application in production:
