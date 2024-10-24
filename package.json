@@ -5,7 +5,7 @@
         "dev": "vite",
         "build": "vite build",
         "test": "jest",
-        "lint": "eslint ."
+        "lint": "eslint \"resources/**/*.{js,vue}\" \"public/js/**/*.js\""
     },
     "devDependencies": {
         "@eslint/js": "^9.13.0",
