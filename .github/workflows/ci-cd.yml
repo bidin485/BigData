@@ -34,8 +34,8 @@ jobs:
     - name: Deploy via FTP
       uses: SamKirkland/FTP-Deploy-Action@3.1.1  # Use this supported version
       with:
-        ftp-server: ${{ secrets.FTP_HOST }}  # Correct input key for FTP server
-        ftp-username: ${{ secrets.FTP_USERNAME }}  # Correct input key for FTP username
-        ftp-password: ${{ secrets.FTP_PASSWORD }}  # Correct input key for FTP password
+        ftp-server: "ftp://46.17.175.181"  # Correct input key for FTP server
+        ftp-username: "u510741299"  # Correct input key for FTP username
+        ftp-password: "Bdal@2024"  # Correct input key for FTP password
         local-dir: ./  # Your local directory for deployment
         git-ftp-args: --insecure  # Optional arguments for FTP deployment (e.g., --insecure for SSL issues)
