@@ -39,14 +39,33 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: FTP Deploy
+      # Step 1: Deploy Root Contents without 'public' directory
+      - name: FTP Deploy Root Contents
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4  # Updated version
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}/
-          local-dir: ./
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}/  # Deploy to root directory
+          local-dir: BigData
+          exclude: |
+            public/**  # Exclude public directory to avoid conflicts
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/tests/**
+            README.md
+            .env.example
+
+      # Step 2: Deploy Public Folder to 'public_html'
+      - name: FTP Deploy Public Folder
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: public_html  # Deploy to public_html directory
+          local-dir: BigData/public
           exclude: |
             **/.git*
             **/.git*/**
