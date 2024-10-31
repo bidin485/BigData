@@ -49,7 +49,6 @@ jobs:
           server-dir: ${{ secrets.FTP_SERVER_DIR }}/  # Deploy to root directory
           local-dir: ./
           exclude: |
-            public/**  # Exclude public directory to avoid conflicts
             **/.git*
             **/.git*/**
             **/node_modules/**
