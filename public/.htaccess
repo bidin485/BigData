@@ -9,6 +9,10 @@ php_value error_reporting E_ALL
 
     RewriteEngine On
 
+    # Redirect requests to /public subdirectory
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ /public/$1 [L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
