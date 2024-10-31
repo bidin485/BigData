@@ -1,0 +1,7 @@
+.git*
+.github/*
+tests/*
+node_modules/*
+*.log
+.env.example
+README.md

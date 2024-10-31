@@ -3,41 +3,56 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Replace with your branch name if different
+      - main
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # This is important for FTP deploy to work correctly
 
-    # Step 1: Run Tests
-    - name: Run Unit Tests
-      run: |
-        npm install
-        npm test  # Run your project's test script (adjust for your stack)
-
-    # Step 2: Lint Code
-    - name: Lint Code
-      run: |
-        npm install
-        npm run lint  # Example for linting (adjust for your project)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Run Tests
+        run: npm test
+        
+      - name: Lint Code
+        run: npm run lint
 
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
     
-    - name: Deploy via FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.5.0
-      with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./  # Your local directory
-        server-dir: /public_html/  # Your Hostinger web directory
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      
+      - name: FTP Deploy Root Contents
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4  # Updated version
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}/bigdata/  # Deploy to root directory
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/tests/**
+            README.md
+            .env.example
+
