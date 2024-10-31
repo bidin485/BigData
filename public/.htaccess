@@ -1,17 +1,9 @@
-# Enable error logging
-php_flag display_errors on
-php_value error_reporting E_ALL
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
 
     RewriteEngine On
-
-    # Redirect requests to /public subdirectory
-    RewriteCond %{REQUEST_URI} !^/public/
-    RewriteRule ^(.*)$ /public/$1 [L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

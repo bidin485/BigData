@@ -46,7 +46,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}/  # Deploy to root directory
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}/bigdata/  # Deploy to root directory
           local-dir: ./
           exclude: |
             **/.git*
